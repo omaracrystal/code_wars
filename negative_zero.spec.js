@@ -1,6 +1,6 @@
-var words = require('./negative_zero.js');
+var isNegativeZero = require('./negative_zero.js');
 
-describe('isNegativeZero', function() {
+describe('isNegativeZero()', function() {
 
   it('0 is not -0', function() {
     expect(isNegativeZero(0)).toEqual(false);
@@ -8,6 +8,8 @@ describe('isNegativeZero', function() {
   it('-0 is -0', function() {
     expect(isNegativeZero(-0)).toEqual(true);
   });
+
+});
 
 
 //JUnit Tests
