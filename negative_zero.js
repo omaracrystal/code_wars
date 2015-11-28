@@ -1,14 +1,20 @@
 function isNegativeZero (number) {
-  if ( number > 0 ) {
+    if (typeof(number) == "string") {
       return false;
-  }
-  if (number < 0) {
+    }
+    if ( number > 0 ) {
+        return false;
+    }
+    if (number < 0) {
+        return false;
+    }
+    if ( 1 / number === Number.POSITIVE_INFINITY ) {
+        return false;
+    }
+    if (1 / number === Number.NEGATIVE_INFINITY ) {
       return true;
-  }
-  if ( 1 / number === Number.POSITIVE_INFINITY ) {
-      return false;
-  }
-  return true;
+    }
+    return false;
 }
 
 module.exports = isNegativeZero;
